@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from distutils.log import debug
+from flask import Flask, render_template, url_for
 
 app=Flask(__name__)
 
@@ -23,12 +24,14 @@ posts = [
 @app.route('/')
 @app.route('/home')
 def hello():
-    return render_template('home.html',posts=posts,title='All Posts')
+    return render_template('home.html',posts=posts,)
 
 @app.route('/about')
 def about():
-     return render_template('about.html')
+    title = "About"
+    return render_template('about.html',title=title)
 
 #To run the app.py in debug Mode
-# if __name__ =="__main__":
-#     app.run(debug=True)
+# * ! danger
+if __name__=='__main__':
+    app.run(debug=True)
