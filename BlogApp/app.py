@@ -1,7 +1,11 @@
 from distutils.log import debug
 from flask import Flask, render_template, url_for
 
+from forms import RegistrationForm, LoginForm
+
 app=Flask(__name__)
+
+app.config['SECRET_KEY']='673b02697ceecbac65a9591ffeb47c0d'
 
 posts = [
     {
@@ -30,6 +34,27 @@ def hello():
 def about():
     title = "About"
     return render_template('about.html',title=title)
+
+
+@app.route('/register')
+def register():
+    form = RegistrationForm()
+    title= 'Register'
+    return render_template('register.html',title=title, form=form)
+
+
+
+
+@app.route('/login')
+def login():
+    form = LoginForm()
+    title= 'Login'
+    return render_template('login.html',title=title, form=form)
+
+
+
+
+
 
 #To run the app.py in debug Mode
 # * ! danger

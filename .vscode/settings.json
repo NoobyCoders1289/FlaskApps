@@ -3,6 +3,7 @@
         "Fisrt",
         "Hasini",
         "psycopg",
-        "Ramya"
+        "Ramya",
+        "wtforms"
     ]
 }
