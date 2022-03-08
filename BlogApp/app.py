@@ -95,6 +95,5 @@ def login():
 
 
 #To run the app.py in debug Mode
-# * ! danger
 if __name__=='__main__':
     app.run(debug=True)
